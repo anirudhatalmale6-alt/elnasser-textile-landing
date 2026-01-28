@@ -87,7 +87,7 @@
         }
 
         .logo svg {
-            height: 64px;
+            height: 100px;
             width: auto;
         }
 
@@ -699,28 +699,43 @@
         }
 
         .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 3rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            align-items: center;
+            justify-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .clients-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .client-logo {
-            height: 50px;
+            height: 60px;
             width: auto;
-            max-width: 150px;
+            max-width: 160px;
             object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.6;
             transition: all 0.3s ease;
         }
 
         .client-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
+            transform: scale(1.05);
         }
 
         /* Contact Section */
@@ -1457,17 +1472,20 @@
     <section class="clients">
         <div class="section-container">
             <div class="clients-header reveal">
-                <h2>Trusted by Leading Brands</h2>
+                <h2>Our Clients</h2>
             </div>
             <div class="clients-grid reveal">
-                <img src="images/clients/Champion-Logo.png" alt="Champion" class="client-logo">
-                <img src="images/clients/New_Balance_logo.svg-removebg-preview.png" alt="New Balance" class="client-logo">
-                <img src="images/clients/U.S.-Polo-Assn-logo-500x281.png" alt="U.S. Polo Assn" class="client-logo">
                 <img src="images/clients/Fashion-Nova-Logo-500x281-removebg-preview.png" alt="Fashion Nova" class="client-logo">
-                <img src="images/clients/Aeropostale-Logo-removebg-preview.png" alt="Aeropostale" class="client-logo">
-                <img src="images/clients/TJ-Maxx-Logo-removebg-preview.png" alt="TJ Maxx" class="client-logo">
-                <img src="images/clients/TK-Maxx-Logo-500x281-removebg-preview.png" alt="TK Maxx" class="client-logo">
+                <img src="images/clients/U.S.-Polo-Assn-logo-500x281.png" alt="U.S. Polo Assn" class="client-logo">
                 <img src="images/clients/nbalogo.jpg" alt="NBA" class="client-logo">
+                <img src="images/clients/Aeropostale-Logo-removebg-preview.png" alt="Aeropostale" class="client-logo">
+                <img src="images/clients/HND_logo-removebg-preview.png" alt="Hind" class="client-logo">
+                <img src="images/clients/kids_concept_star-logo-1-removebg-preview.png" alt="Kids Star" class="client-logo">
+                <img src="images/clients/mon-cheri-logo-png-transparent-removebg-preview.png" alt="Mon Cheri" class="client-logo">
+                <img src="images/clients/TK-Maxx-Logo-500x281-removebg-preview.png" alt="TK Maxx" class="client-logo">
+                <img src="images/clients/New_Balance_logo.svg-removebg-preview.png" alt="New Balance" class="client-logo">
+                <img src="images/clients/TJ-Maxx-Logo-removebg-preview.png" alt="TJ Maxx" class="client-logo">
+                <img src="images/clients/Champion-Logo.png" alt="Champion" class="client-logo">
             </div>
         </div>
     </section>
