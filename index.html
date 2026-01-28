@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EL Nasser Textile Co. - Premier apparel manufacturer delivering quality garments to global markets. Export-ready production with certified excellence.">
+    <meta name="keywords" content="apparel manufacturing, textile company, garment export, clothing manufacturer, Egypt textile">
+    <title>EL Nasser Textile Co. | Premium Apparel Manufacturing</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0B2A3F;
+            --primary-light: #14293e;
+            --secondary: #6B7280;
+            --background: #E5E7EB;
+            --accent: #C9A24D;
+            --white: #FFFFFF;
+            --text-dark: #1a1a1a;
+            --text-light: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Pattern Background */
+        .pattern-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            background-image:
+                linear-gradient(30deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+                linear-gradient(150deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+                linear-gradient(30deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary)),
+                linear-gradient(150deg, var(--primary) 12%, transparent 12.5%, transparent 87%, var(--primary) 87.5%, var(--primary));
+            background-size: 80px 140px;
+            background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+            pointer-events: none;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(11, 42, 63, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 5%;
+            box-shadow: 0 4px 30px rgba(11, 42, 63, 0.08);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo svg {
+            height: 48px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            padding: 0.25rem 0;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.75rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(201, 162, 77, 0.3);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, rgba(201, 162, 77, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(107, 114, 128, 0.2) 0%, transparent 50%);
+        }
+
+        .hero .pattern-bg {
+            opacity: 0.05;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.03) 50px, rgba(255,255,255,0.03) 51px),
+                repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.03) 50px, rgba(255,255,255,0.03) 51px);
+            background-size: 51px 51px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 5% 4rem;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(201, 162, 77, 0.15);
+            border: 1px solid rgba(201, 162, 77, 0.3);
+            padding: 0.5rem 1rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-badge span {
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .accent {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.15rem;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.25rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInRight 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .section-tag::before {
+            right: calc(100% + 15px);
+        }
+
+        .section-tag::after {
+            left: calc(100% + 15px);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-content p {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--background);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent);
+        }
+
+        .feature-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text p {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image-container {
+            position: relative;
+            background: var(--primary);
+            padding: 2rem;
+        }
+
+        .about-image-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--accent);
+            z-index: -1;
+        }
+
+        .about-placeholder {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(201, 162, 77, 0.05) 20px,
+                rgba(201, 162, 77, 0.05) 40px
+            );
+        }
+
+        .about-placeholder-text {
+            position: relative;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 1rem;
+            border: 1px dashed var(--accent);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 8rem 5%;
+            background: var(--background);
+            position: relative;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 1px solid rgba(11, 42, 63, 0.08);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.4s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(11, 42, 63, 0.12);
+        }
+
+        .product-card:hover::before {
+            height: 100%;
+        }
+
+        .product-image {
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 30px,
+                rgba(255, 255, 255, 0.02) 30px,
+                rgba(255, 255, 255, 0.02) 31px
+            );
+        }
+
+        .product-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(201, 162, 77, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--accent);
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-content p {
+            color: var(--secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: gap 0.3s ease;
+        }
+
+        .product-link:hover {
+            gap: 0.75rem;
+        }
+
+        .product-link svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 5%;
+            background: var(--white);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            color: var(--secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--background);
+        }
+
+        .contact-details li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--accent);
+        }
+
+        .contact-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-text p,
+        .contact-text a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form-container {
+            background: var(--primary);
+            padding: 3rem;
+            position: relative;
+        }
+
+        .contact-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 0% 100%, rgba(201, 162, 77, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .contact-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-form h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form > p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23C9A24D' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+        }
+
+        .form-group select option {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1.15rem 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .btn-submit:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 162, 77, 0.3);
+        }
+
+        .btn-submit svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #25D366;
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 4rem 5% 2rem;
+            position: relative;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand svg {
+            height: 50px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand svg path {
+            fill: var(--white);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .footer-column h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-visual {
+                order: -1;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem 5%;
+                gap: 1.5rem;
+                border-bottom: 1px solid var(--background);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: none;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .whatsapp-btn span {
+                display: none;
+            }
+
+            .whatsapp-btn {
+                padding: 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+                <g fill="#0B2A3F">
+                    <path d="M269.36,539.42h-64.9v-85.24h63.2v17.41h-44.57v16.44h42.01v16.68h-42.01v17.17h46.27v17.54Z"/>
+                    <path d="M305.04,454.18v67.83h42.62v17.41h-61.62v-85.24h19Z"/>
+                    <path d="M420.12,509.59l-1.22-26.79v-28.62h19.12v85.24h-16.32l-42.38-54.55.73,28.01v26.55h-19.24v-85.24h16.32l42.99,55.41Z"/>
+                    <path d="M519.12,524.81h-43.72l-6.21,14.61h-20.46l38.24-85.24h20.7l38.24,85.24h-20.58l-6.21-14.61ZM497.32,473.42l-14.74,34.58h29.35l-14.61-34.58Z"/>
+                    <path d="M606.06,474.76c-2.27-2.35-5.22-4.14-8.83-5.36-3.61-1.22-7.25-1.83-10.9-1.83-4.3,0-7.91.85-10.84,2.56-2.92,1.7-4.38,3.98-4.38,6.82,0,3.57,1.48,6.03,4.44,7.37,2.96,1.34,7.61,2.29,13.94,2.86,21.84,1.87,32.76,11.08,32.76,27.64,0,6.01-1.74,11.14-5.24,15.4-3.49,4.26-7.87,7.31-13.15,9.13-5.28,1.83-11.12,2.78-17.54,2.86-7.79.08-15.1-1.38-21.92-4.38-6.82-3-11.93-7.39-15.34-13.15l11.32-11.81c3.09,3.98,7.02,6.98,11.81,9.01,4.79,2.03,9.54,3.04,14.25,3.04,5.03,0,9.13-.93,12.3-2.8s4.75-4.3,4.75-7.31c.08-3.49-1.28-6.15-4.08-7.98-2.8-1.83-7.16-2.98-13.09-3.47-5.11-.49-9.48-1.18-13.09-2.07-3.61-.89-7.12-2.27-10.53-4.14-3.41-1.87-5.99-4.49-7.73-7.85-1.75-3.37-2.58-7.45-2.5-12.24.08-8.12,3.39-14.47,9.92-19.06,6.53-4.59,14.47-6.88,23.81-6.88,6.98,0,12.97.97,17.96,2.92,4.99,1.95,9.6,5.36,13.82,10.23l-11.93,10.47Z"/>
+                    <path d="M687.4,474.76c-2.27-2.35-5.22-4.14-8.83-5.36-3.61-1.22-7.25-1.83-10.9-1.83-4.3,0-7.91.85-10.84,2.56-2.92,1.7-4.38,3.98-4.38,6.82,0,3.57,1.48,6.03,4.44,7.37,2.96,1.34,7.61,2.29,13.94,2.86,21.84,1.87,32.76,11.08,32.76,27.64,0,6.01-1.74,11.14-5.24,15.4-3.49,4.26-7.87,7.31-13.15,9.13-5.28,1.83-11.12,2.78-17.54,2.86-7.79.08-15.1-1.38-21.92-4.38-6.82-3-11.93-7.39-15.34-13.15l11.32-11.81c3.09,3.98,7.02,6.98,11.81,9.01,4.79,2.03,9.54,3.04,14.25,3.04,5.03,0,9.13-.93,12.3-2.8s4.75-4.3,4.75-7.31c.08-3.49-1.28-6.15-4.08-7.98-2.8-1.83-7.16-2.98-13.09-3.47-5.11-.49-9.48-1.18-13.09-2.07-3.61-.89-7.12-2.27-10.53-4.14-3.41-1.87-5.99-4.49-7.73-7.85-1.75-3.37-2.58-7.45-2.5-12.24.08-8.12,3.39-14.47,9.92-19.06,6.53-4.59,14.47-6.88,23.81-6.88,6.98,0,12.97.97,17.96,2.92,4.99,1.95,9.6,5.36,13.82,10.23l-11.93,10.47Z"/>
+                    <path d="M783.24,539.42h-64.9v-85.24h63.2v17.41h-44.57v16.44h42.01v16.68h-42.01v17.17h46.27v17.54Z"/>
+                    <path d="M875.54,539.42h-21.07l-21.8-28.01h-13.76v28.01h-19v-85.24h40.43c9.82,0,17.54,2.8,23.14,8.4,5.6,5.6,8.4,12.38,8.4,20.34-.08,6.33-1.5,11.71-4.26,16.14s-7.92,7.98-15.47,10.66l23.38,28.25v1.46ZM818.92,470.5v24.84h21.68c4.06,0,7.16-1.22,9.32-3.65s3.23-5.2,3.23-8.28c-.08-3.33-1.22-6.31-3.41-8.95-2.19-2.64-5.32-3.96-9.38-3.96h-21.43Z"/>
+                </g>
+                <g fill="#0B2A3F">
+                    <path d="M316.44,580.94h-17.95v-7.88h44.64v7.88h-17.87v46.75h-8.82v-46.75Z"/>
+                    <path d="M392.78,627.69h-40.35v-54.64h40.12v8.51h-31.37v14.75h30.13v8.12h-30.13v14.67h31.61v8.59Z"/>
+                    <path d="M438.13,573.05h9.6v.39l-18.5,26.54,19.28,27.47v.23h-9.91l-14.83-21.62-14.91,21.62h-9.91v-.23l19.2-27.47-18.42-26.54v-.39h9.6l14.44,21.15,14.36-21.15Z"/>
+                    <path d="M469.59,580.94h-17.95v-7.88h44.64v7.88h-17.87v46.75h-8.82v-46.75Z"/>
+                    <path d="M505.57,627.69v-54.64h8.66v54.64h-8.66Z"/>
+                    <path d="M537.81,573.05v46.52h28.8v8.12h-37.54v-54.64h8.74Z"/>
+                    <path d="M616.33,627.69h-40.35v-54.64h40.12v8.51h-31.38v14.75h30.13v8.12h-30.13v14.67h31.61v8.59Z"/>
+                    <path d="M694.07,620.67c-5.62,5.54-12.88,8.12-20.53,8.12-19.82,0-28.72-13.66-28.8-28.02-.08-14.36,9.29-28.65,28.8-28.65,7.34,0,14.44,2.73,19.98,8.27l-5.85,5.62c-3.9-3.82-9.05-5.62-14.13-5.62-13.89,0-20.22,10.23-20.14,20.29.08,9.99,6.01,19.9,20.14,19.9,5.07,0,10.69-2.11,14.52-5.93l6.01,6.01Z"/>
+                    <path d="M755.19,600.61c0,14.75-8.98,28.25-27.94,28.25s-27.94-13.81-27.94-28.18c0-16.62,11.63-28.65,28.1-28.65,18.65.08,27.79,13.81,27.79,28.57ZM727.25,620.82c13.58,0,19.28-9.6,19.28-20.06s-5.78-20.53-19.12-20.76c-12.64,0-19.44,8.82-19.44,20.76.16,9.68,5.78,20.06,19.28,20.06Z"/>
+                    <path d="M772.52,623.4c0,6.63-9.91,6.63-9.91,0s9.91-6.56,9.91,0Z"/>
+                </g>
+            </svg>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Quote</button>
+        <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="pattern-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A24D">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                    </svg>
+                    <span>Export-Ready Manufacturing</span>
+                </div>
+                <h1>Premium Apparel <br><span class="accent">Manufacturing</span> for Global Markets</h1>
+                <p>EL Nasser Textile Co. delivers exceptional quality garments to international buyers. From concept to delivery, we are your trusted manufacturing partner.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        Request Quote
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                        </svg>
+                    </a>
+                    <a href="#products" class="btn-secondary">View Products</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Global Partners</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Units Annually</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Quality Certified</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">About Us</span>
+                <h2 class="section-title">Crafting Excellence Since Day One</h2>
+                <p class="section-subtitle">A commitment to quality, precision, and partnership that defines every garment we produce.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content reveal">
+                    <h3>Your Trusted Apparel Manufacturing Partner</h3>
+                    <p>EL Nasser Textile Co. is a leading apparel manufacturer based in Egypt, specializing in high-quality garment production for international markets. Our state-of-the-art facilities and experienced team ensure every piece meets the highest standards.</p>
+                    <p>We combine traditional craftsmanship with modern technology to deliver products that exceed expectations. From design consultation to final delivery, we're with you at every step.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Quality Assurance</h4>
+                                <p>Rigorous quality control at every production stage</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Certified Production</h4>
+                                <p>International certifications for export compliance</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24"><path d="M17.21 9l-4.38-6.56c-.19-.28-.51-.42-.83-.42-.32 0-.64.14-.83.43L6.79 9H2c-.55 0-1 .45-1 1 0 .09.01.18.04.27l2.54 9.27c.23.84 1 1.46 1.92 1.46h13c.92 0 1.69-.62 1.93-1.46l2.54-9.27L23 10c0-.55-.45-1-1-1h-4.79zM9 9l3-4.4L15 9H9zm3 8c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                            </div>
+                            <div class="feature-text">
+                                <h4>Competitive Pricing</h4>
+                                <p>Factory-direct rates without compromising quality</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="about-image-container">
+                        <div class="about-placeholder">
+                            <div class="about-placeholder-text">Factory Image<br>Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Our Products</span>
+                <h2 class="section-title">Apparel Categories</h2>
+                <p class="section-subtitle">Comprehensive manufacturing capabilities across all garment types.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21.6 18.2L13 11.75v-.91c1.65-.49 2.8-2.17 2.43-4.05-.26-1.31-1.3-2.4-2.61-2.7C10.54 3.57 8.5 5.3 8.5 7.5h2c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5c0 .84-.69 1.52-1.53 1.5-.54-.01-.97.45-.97.99v1.76L2.4 18.2c-.77.58-.36 1.8.6 1.8h18c.96 0 1.37-1.22.6-1.8zM6 18l6-4.5 6 4.5H6z"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>T-Shirts & Polo Shirts</h3>
+                        <p>Premium cotton and blended fabrics in various styles, weights, and finishes. Perfect for retail, promotional, and corporate needs.</p>
+                        <a href="#contact" class="product-link">
+                            Inquire Now
+                            <svg viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5zM19 19.09H5V4.91h14v14.18zM6 15h12v2H6zm0-4h12v2H6zm0-4h12v2H6z"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Workwear & Uniforms</h3>
+                        <p>Durable, functional workwear designed for various industries. Custom branding and safety compliance available.</p>
+                        <a href="#contact" class="product-link">
+                            Inquire Now
+                            <svg viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M13.127 14.56l1.43-1.43 6.44 6.443L19.57 21l-6.443-6.44zm0 0M7.5 6A1.5 1.5 0 1 0 9 7.5 1.5 1.5 0 0 0 7.5 6zm0 0M21 3v18H3V3zm-2 2H5v14h14zM7.5 9A1.5 1.5 0 1 0 9 10.5 1.5 1.5 0 0 0 7.5 9zm0 0M16.5 6A1.5 1.5 0 1 0 18 7.5 1.5 1.5 0 0 0 16.5 6zm0 0"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Sportswear & Activewear</h3>
+                        <p>Performance fabrics with moisture-wicking and stretch properties. Ideal for athletic and athleisure markets.</p>
+                        <a href="#contact" class="product-link">
+                            Inquire Now
+                            <svg viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="product-icon">
+                            <svg viewBox="0 0 24 24"><path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zm7-.17v6.34L9.83 13H7v-2h2.83L12 8.83z"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Casual & Fashion Apparel</h3>
+                        <p>On-trend designs for retail fashion markets. From basics to statement pieces, we bring your vision to life.</p>
+                        <a href="#contact" class="product-link">
+                            Inquire Now
+                            <svg viewBox="0 0 24 24"><path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-container">
+            <div class="section-header reveal">
+                <span class="section-tag">Contact Us</span>
+                <h2 class="section-title">Let's Start Your Project</h2>
+                <p class="section-subtitle">Get in touch with our team to discuss your manufacturing requirements.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3>Ready to Partner?</h3>
+                    <p>Whether you need a small batch or large-scale production, our team is ready to help. Reach out today and let's discuss how we can bring your apparel vision to reality.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Address</h4>
+                                <p>Egypt</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/XXXXXXXXXXX" target="_blank">+XX XXX XXX XXXX</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:info@elnassertextile.com">info@elnassertextile.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form-container reveal">
+                    <form class="contact-form" id="contactForm" action="#" method="POST">
+                        <h4>Request a Quote</h4>
+                        <p>Fill out the form and we'll get back to you within 24 hours.</p>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" placeholder="Your Company">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone / WhatsApp</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product">Product Interest</label>
+                            <select id="product" name="product">
+                                <option value="">Select a category</option>
+                                <option value="tshirts">T-Shirts & Polo Shirts</option>
+                                <option value="workwear">Workwear & Uniforms</option>
+                                <option value="sportswear">Sportswear & Activewear</option>
+                                <option value="casual">Casual & Fashion Apparel</option>
+                                <option value="other">Other / Custom</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements: quantity, specifications, timeline..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            Send Inquiry
+                            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <svg viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#FFFFFF">
+                        <path d="M269.36,539.42h-64.9v-85.24h63.2v17.41h-44.57v16.44h42.01v16.68h-42.01v17.17h46.27v17.54Z"/>
+                        <path d="M305.04,454.18v67.83h42.62v17.41h-61.62v-85.24h19Z"/>
+                        <path d="M420.12,509.59l-1.22-26.79v-28.62h19.12v85.24h-16.32l-42.38-54.55.73,28.01v26.55h-19.24v-85.24h16.32l42.99,55.41Z"/>
+                        <path d="M519.12,524.81h-43.72l-6.21,14.61h-20.46l38.24-85.24h20.7l38.24,85.24h-20.58l-6.21-14.61ZM497.32,473.42l-14.74,34.58h29.35l-14.61-34.58Z"/>
+                        <path d="M606.06,474.76c-2.27-2.35-5.22-4.14-8.83-5.36-3.61-1.22-7.25-1.83-10.9-1.83-4.3,0-7.91.85-10.84,2.56-2.92,1.7-4.38,3.98-4.38,6.82,0,3.57,1.48,6.03,4.44,7.37,2.96,1.34,7.61,2.29,13.94,2.86,21.84,1.87,32.76,11.08,32.76,27.64,0,6.01-1.74,11.14-5.24,15.4-3.49,4.26-7.87,7.31-13.15,9.13-5.28,1.83-11.12,2.78-17.54,2.86-7.79.08-15.1-1.38-21.92-4.38-6.82-3-11.93-7.39-15.34-13.15l11.32-11.81c3.09,3.98,7.02,6.98,11.81,9.01,4.79,2.03,9.54,3.04,14.25,3.04,5.03,0,9.13-.93,12.3-2.8s4.75-4.3,4.75-7.31c.08-3.49-1.28-6.15-4.08-7.98-2.8-1.83-7.16-2.98-13.09-3.47-5.11-.49-9.48-1.18-13.09-2.07-3.61-.89-7.12-2.27-10.53-4.14-3.41-1.87-5.99-4.49-7.73-7.85-1.75-3.37-2.58-7.45-2.5-12.24.08-8.12,3.39-14.47,9.92-19.06,6.53-4.59,14.47-6.88,23.81-6.88,6.98,0,12.97.97,17.96,2.92,4.99,1.95,9.6,5.36,13.82,10.23l-11.93,10.47Z"/>
+                        <path d="M687.4,474.76c-2.27-2.35-5.22-4.14-8.83-5.36-3.61-1.22-7.25-1.83-10.9-1.83-4.3,0-7.91.85-10.84,2.56-2.92,1.7-4.38,3.98-4.38,6.82,0,3.57,1.48,6.03,4.44,7.37,2.96,1.34,7.61,2.29,13.94,2.86,21.84,1.87,32.76,11.08,32.76,27.64,0,6.01-1.74,11.14-5.24,15.4-3.49,4.26-7.87,7.31-13.15,9.13-5.28,1.83-11.12,2.78-17.54,2.86-7.79.08-15.1-1.38-21.92-4.38-6.82-3-11.93-7.39-15.34-13.15l11.32-11.81c3.09,3.98,7.02,6.98,11.81,9.01,4.79,2.03,9.54,3.04,14.25,3.04,5.03,0,9.13-.93,12.3-2.8s4.75-4.3,4.75-7.31c.08-3.49-1.28-6.15-4.08-7.98-2.8-1.83-7.16-2.98-13.09-3.47-5.11-.49-9.48-1.18-13.09-2.07-3.61-.89-7.12-2.27-10.53-4.14-3.41-1.87-5.99-4.49-7.73-7.85-1.75-3.37-2.58-7.45-2.5-12.24.08-8.12,3.39-14.47,9.92-19.06,6.53-4.59,14.47-6.88,23.81-6.88,6.98,0,12.97.97,17.96,2.92,4.99,1.95,9.6,5.36,13.82,10.23l-11.93,10.47Z"/>
+                        <path d="M783.24,539.42h-64.9v-85.24h63.2v17.41h-44.57v16.44h42.01v16.68h-42.01v17.17h46.27v17.54Z"/>
+                        <path d="M875.54,539.42h-21.07l-21.8-28.01h-13.76v28.01h-19v-85.24h40.43c9.82,0,17.54,2.8,23.14,8.4,5.6,5.6,8.4,12.38,8.4,20.34-.08,6.33-1.5,11.71-4.26,16.14s-7.92,7.98-15.47,10.66l23.38,28.25v1.46ZM818.92,470.5v24.84h21.68c4.06,0,7.16-1.22,9.32-3.65s3.23-5.2,3.23-8.28c-.08-3.33-1.22-6.31-3.41-8.95-2.19-2.64-5.32-3.96-9.38-3.96h-21.43Z"/>
+                    </g>
+                    <g fill="#FFFFFF">
+                        <path d="M316.44,580.94h-17.95v-7.88h44.64v7.88h-17.87v46.75h-8.82v-46.75Z"/>
+                        <path d="M392.78,627.69h-40.35v-54.64h40.12v8.51h-31.37v14.75h30.13v8.12h-30.13v14.67h31.61v8.59Z"/>
+                        <path d="M438.13,573.05h9.6v.39l-18.5,26.54,19.28,27.47v.23h-9.91l-14.83-21.62-14.91,21.62h-9.91v-.23l19.2-27.47-18.42-26.54v-.39h9.6l14.44,21.15,14.36-21.15Z"/>
+                        <path d="M469.59,580.94h-17.95v-7.88h44.64v7.88h-17.87v46.75h-8.82v-46.75Z"/>
+                        <path d="M505.57,627.69v-54.64h8.66v54.64h-8.66Z"/>
+                        <path d="M537.81,573.05v46.52h28.8v8.12h-37.54v-54.64h8.74Z"/>
+                        <path d="M616.33,627.69h-40.35v-54.64h40.12v8.51h-31.38v14.75h30.13v8.12h-30.13v14.67h31.61v8.59Z"/>
+                        <path d="M694.07,620.67c-5.62,5.54-12.88,8.12-20.53,8.12-19.82,0-28.72-13.66-28.8-28.02-.08-14.36,9.29-28.65,28.8-28.65,7.34,0,14.44,2.73,19.98,8.27l-5.85,5.62c-3.9-3.82-9.05-5.62-14.13-5.62-13.89,0-20.22,10.23-20.14,20.29.08,9.99,6.01,19.9,20.14,19.9,5.07,0,10.69-2.11,14.52-5.93l6.01,6.01Z"/>
+                        <path d="M755.19,600.61c0,14.75-8.98,28.25-27.94,28.25s-27.94-13.81-27.94-28.18c0-16.62,11.63-28.65,28.1-28.65,18.65.08,27.79,13.81,27.79,28.57ZM727.25,620.82c13.58,0,19.28-9.6,19.28-20.06s-5.78-20.53-19.12-20.76c-12.64,0-19.44,8.82-19.44,20.76.16,9.68,5.78,20.06,19.28,20.06Z"/>
+                        <path d="M772.52,623.4c0,6.63-9.91,6.63-9.91,0s9.91-6.56,9.91,0Z"/>
+                    </g>
+                </svg>
+                <p>Premium apparel manufacturing for global markets. Quality, precision, and partnership in every garment.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#products">T-Shirts & Polos</a></li>
+                    <li><a href="#products">Workwear</a></li>
+                    <li><a href="#products">Sportswear</a></li>
+                    <li><a href="#products">Fashion Apparel</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="https://wa.me/XXXXXXXXXXX">WhatsApp</a></li>
+                    <li><a href="mailto:info@elnassertextile.com">Email Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EL Nasser Textile Co. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/XXXXXXXXXXX" class="whatsapp-btn" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Chat on WhatsApp</span>
+        </a>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Create WhatsApp message
+            let message = `*New Inquiry from Website*%0A%0A`;
+            message += `*Name:* ${data.name}%0A`;
+            if (data.company) message += `*Company:* ${data.company}%0A`;
+            message += `*Email:* ${data.email}%0A`;
+            if (data.phone) message += `*Phone:* ${data.phone}%0A`;
+            if (data.product) message += `*Product Interest:* ${data.product}%0A`;
+            message += `%0A*Message:*%0A${data.message}`;
+
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/XXXXXXXXXXX?text=${message}`, '_blank');
+
+            // Show success feedback
+            alert('Thank you! Redirecting to WhatsApp to complete your inquiry.');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
